@@ -32,6 +32,22 @@ def province_3():
 def alberta_graph():
     return render_template('graph_1.html')
 
+@app.route('/graph_2', methods=["GET", "POST"])
+def ontario_graph():
+    return render_template('graph_2.html')
+
+@app.route('/graph_3', methods=["GET", "POST"])
+def albertaf_graph():
+    return render_template('graph_3.html')
+
+@app.route('/graph_4', methods=["GET", "POST"])
+def ontariof_graph():
+    return render_template('graph_4.html')
+
+@app.route('/globe_ping', methods=["GET", "POST"])
+def globe():
+    return render_template('globe.html')
+
 @app.route('/data_json', methods=["GET"])
 def send_data():
     json_file = df.to_json(orient='records')

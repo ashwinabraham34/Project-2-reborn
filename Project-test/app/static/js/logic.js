@@ -4,7 +4,7 @@ var url = "http://127.0.0.1:5000/data_json"
 // Creating map object
 var myMap = L.map("map", {
   center: [43.651070, -79.347015],
-  zoom: -100
+  zoom: 10
 });
 
 // Define outdoormap, satellitemap, and grayscalemap layers
@@ -37,7 +37,6 @@ d3.json(url, function(response) {
     }
 
   }
-
   // Add our marker cluster layer to the map
   myMap.addLayer(markers);
 

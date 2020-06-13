@@ -3,6 +3,11 @@
 
 <head>
 
+  <script src="https://d3js.org/d3-selection.v1.min.js"></script>
+  <script type='text/javascript' src='http://d3js.org/d3.v3.min.js'></script>
+  <script type='text/javascript' src='http://d3js.org/topojson.v1.min.js'></script>
+  <script type='text/javascript' src='static/js/planetaryjs.min.js'></script>
+
   <style>
 
     .bar{
@@ -53,6 +58,18 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Plots
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="http://127.0.0.1:5000/graph_1">Alberta Covid Cases by age</a>
+              
+              <a class="dropdown-item" href="http://127.0.0.1:5000/graph_2">Ontario Covid Cases by age</a>
+              
+              <a class="dropdown-item" href="http://127.0.0.1:5000/graph_3">Alberta Fatalities</a>
+              
+              <a class="dropdown-item" href="http://127.0.0.1:5000/graph_4">Ontario Fatalities</a>
+            </div>
             
           </li>
           <li class="nav-item">
@@ -76,14 +93,12 @@
         <div class="box">
           <h3 class="title">Data by province</h3>
           <hr>
-          <img src="Resources/assets/images/Fig1.png" class="vizualization rounded float-left" alt="Max temp graph">
-          <p>The purpose of this project was to analyze how weather changes as you get closer to the equator. To
-            accomplish this analysis, we first pulled data from the OpenWeatherMap API to assemble a dataset on over
-            500 cities.</p>
-          <p>After assembling the dataset, we used Matplotlib to plot various aspects of the weather vs. latitude.
-            Factors we looked at included: temperature, cloudiness, wind speed, and humidity. This site provides the
-            source data and visualizations created as part of the analysis, as well as explanations and descriptions of
-            any trends and correlations witnessed.</p>
+          <canvas id='globe' width='500' height='200'></canvas>
+          <script type='text/javascript' src='static/js/yourApp.js'></script>
+          <script src="https://code.jquery.com/jquery-1.12.4.min.js" class="vizualization rounded float-left" alt="Max temp graph" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script> 
+          <p>The purpose of this project is to map the severity of the COVID pandemic in the Provinces of Alberta, 
+            British Colombia and Ontario. We obtained data from the provincial governments on case count and location. 
+            Each case is identified by the age group and infection date. </p>
         </div>
       </div>
 
@@ -91,7 +106,7 @@
       <!-- right Box -->
       <div class="col-lg-5 col-md-12">
         <div class="box">
-          <h5 class="title">Visualizations</h5>
+          <h5 class="title">Extensive View of Data Available</h5>
           <hr>
 
 
@@ -103,21 +118,21 @@
                 </a>
               </div>
               <div class="col-6">
-                <a href="humidity.html">
-                  <img class="panel" src="Resources/assets/images/Fig2.png" alt="Humidity Plot">
+                <a href="http://127.0.0.1:5000/graph_2">
+                  <img class="panel" src="static/on_c.png" alt="Ontario Covid Cases by age">
                 </a>
               </div>
             </div>
 
             <div class="row" style="padding-bottom: 30px;">
               <div class="col-6">
-                <a href="cloudiness.html">
-                  <img class="panel" src="Resources/assets/images/Fig3.png" alt="Cloudiness Plot">
+                <a href="http://127.0.0.1:5000/graph_3">
+                  <img class="panel" src="static/ab_f.png" alt="Alberta Fatalities">
                 </a>
               </div>
               <div class="col-6">
-                <a href="wind_speed.html">
-                  <img class="panel" src="Resources/assets/images/Fig4.png" alt="WindSpeed Plot">
+                <a href="http://127.0.0.1:5000/graph_4">
+                  <img class="panel" src="static/on_f.png" alt="Ontario Fatalities">
                 </a>
               </div>
 
